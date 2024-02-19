@@ -1,38 +1,93 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+body {
+  background-color: #86da69;
+}
+
+.center-container {
+  border: 2px solid;
+  margin: auto;
+  margin-top: 5%;
+  width: 50%;
+  padding: 10px;
+}
+
+.center-container h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.center-container h3 {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.buttonContainer {
+  width: 20%;
+  margin: auto;
+  margin-top: 10%;
+}
+.button {
+  background-color: #2d0087; /* Green */
+  border: none;
+  color: white;
+  width: 200px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.button:hover {
+  background-color: #76131d; /* Green */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cylinderContainer {
+  width: 20%;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cylinder {
+  width: 200px;
+  height: 280px;
+  border-radius: 50px 50px / 20px 20px;
+  background: #333;
 }
+
+.wave{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:#4973ff;
+    border-radius:50%;
+    box-shadow:inset 0 0 50px rgba(0,0,0,.5);
+  }
+  .wave:before,.wave:after{
+    content:'';
+    position:absolute;
+    width:200%;
+    height:200%;
+    top:0;
+    left:50%;
+    transform:translate(-50%,-75%);
+    background:#000;
+  }
+  .wave:before{
+    border-radius:45%;
+    background:rgba(255,255,255,1);
+    animation:animate 5s linear infinite;
+  }
+  .wave:after{
+    border-radius:40%;
+    background:rgba(255,255,255,.5);
+    animation:animate 10s linear infinite;
+  }
+  @keyframes animate{
+    0%{
+       transform:translate(-50%,-75%) rotate(0deg);
+    }
+    100%{
+       transform:translate(-50%,-75%) rotate(360deg);
+    }
+  }
